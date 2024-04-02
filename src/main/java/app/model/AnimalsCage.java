@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AnimalsCage {
 
-    @Autowired
-    @Qualifier("dog") // для связывания по имени
-    private Animal animal; // для связывания по имени еще можно заменить имя переменной на cat или dog
+    @Autowired // автоматическое связывание с бином Animal
+    @Qualifier("dog") // для связывания по имени, можно заменить имя переменной на cat или dog
+    private Animal animal;
 
-    @Autowired
-    private Timer timer; // автоматическое связывание с бином таймера
+    @Autowired // автоматическое связывание с бином таймера
+    private Timer timer;
 
     public void whatAnimalSay() {
         System.out.println("Say:");
@@ -23,7 +23,7 @@ public class AnimalsCage {
         System.out.println(timer.getTime()); // замена вместо new Timer().getTime()
         System.out.println("________________________");
     }
-    public Timer getTimer() { // для теста
+    public Timer getTimer() { // для MainTest
         return timer;
     }
 }
